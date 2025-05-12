@@ -1,7 +1,18 @@
 import react from 'react';
 import './Header.scss';
-import { motion } from 'framer-motion';
+import { motion, scale } from 'framer-motion';
 import { images } from '../../constants';
+
+const scaleVarients = {
+  whileInView: {
+    scale: [0, 1],
+    opacity: [0, 1],
+    transition: {
+      duration: 1,
+      ease: 'easeInOut'
+    }
+  }
+}
 
 const Header = () => {
   return (
@@ -16,16 +27,43 @@ const Header = () => {
               <span>👋</span>
               <div style={{marginLeft: 20}}>
                 <p className = "p-text">Hello, I am</p>
-                <h1 className = "head-text">John Doe</h1>
+                <h1 className = "head-text">Martijn Peter Wolffenbuttel</h1>
               </div>
             </div>
             <div className='tag-cmp app__flex'>
               <p className = "p-text" style={{marginLeft: 20}}>Frontend Developer</p>
-              <p className = "p-text" style={{marginLeft: 20}}>&</p>
               <p className = "p-text" style={{marginLeft: 20}}>Unity Developer</p>
             </div>
           </div>
       </motion.div>
+
+      <motion.div
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 1, delayChildren: 0.5 }}
+        className = "app__header-img"
+      >
+        <img src={images.profile} alt="profile.bg"/>
+        <motion.img
+        whileInView={{ scale: [0, 1] }}
+        transition={{ duration: 1, ease: 'easeInOut' }}
+        className = "overlay_circle"
+        src={images.circle}
+        alt="profile_circle"
+        />
+      </motion.div>      
+      
+      <motion.div
+        variant={scaleVarients}
+        whileInView={scaleVarients.whileInView}
+        className = "app__header-circles"
+      >
+        {[images.flutter, images.redux, images.sass].map((circle, index) => (
+          <div className = "circle-cmp app__flex" key={`circle-${index}`}>
+            <img src={circle} alt="circle"/>
+          </div>
+        ))}
+      </motion.div>
+
     </div>
   );
 };
