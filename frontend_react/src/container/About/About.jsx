@@ -4,13 +4,7 @@ import './About.scss';
 import { motion } from 'framer-motion';
 import { images } from '../../constants';
 import { urlFor, client } from '../../client';
-
-// const abouts = [
-//   { title: 'Front End Development', description: 'I am a web developer with a passion for creating dynamic and responsive web applications.', imgUrl: images.about01},
-//   { title: 'Unity Development', description: 'I am a Unity developer with a passion for creating dynamic and responsive Unity applications.', imgUrl: images.about01},
-//   { title: 'Tech Stack', description: 'I am a web developer with a passion for creating dynamic and responsive web applications.', imgUrl: images.about01},
-//   { title: 'Web Development', description: 'I am a web developer with a passion for creating dynamic and responsive web applications.', imgUrl: images.about01},
-// ]
+import { AppWrap } from '../../wrapper';
 
 const About = () => {
 
@@ -48,4 +42,4 @@ useEffect(() => {
   );
 };
 
-export default About;
+export default AppWrap(About, 'about');

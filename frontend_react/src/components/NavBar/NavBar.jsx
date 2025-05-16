@@ -11,9 +11,9 @@ const NavBar = () => {
 
   return (
     <nav className='app__navbar'> 
-      <div className='app__navbar-logo'>
+      {/* <div className='app__navbar-logo'>
         <img src = {images.logo}></img>
-      </div>
+      </div> */}
       <ul className='app__navbar-links'>
         {['Home', 'About', 'Skills', 'Testimonial', 'Contact'].map((item) => (
           <li className='app__flex' key={`link-${item}`}>
