@@ -128,13 +128,15 @@
     flex: 1;
     height: 100%;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: enter;
     position: relative;
 
     img{
-        width: 100%;
-        object-fit: contain;
+        width: 33%;
+        height: 33%;
+        object-fit: wrap;
+        border-radius: 50%;
         z-index: 1;
     }
 
