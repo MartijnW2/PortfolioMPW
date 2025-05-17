@@ -9,22 +9,18 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  :hover {
-    transform: scale(1.2);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  img{
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
   }
-}
 
-$icon-count: 5;
-@for $i from 0 through ($icon-count - 1) {
-  .icon-#{$i} {
-    $angle: (360deg / $icon-count) * $i;
-    transform: 
-      translate(-50%, -50%)
-      rotate($angle)
-      translate(0, -120px)
-      rotate(-$angle);
-  }
+  // &:hover {
+  //   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  //   background: #fff;
+  // }
 }

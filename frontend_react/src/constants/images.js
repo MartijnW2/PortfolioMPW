@@ -35,6 +35,9 @@ import bolt from '../assets/bolt.png';
 import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
+import sql2 from '../assets/sql2.png';
+import csharp from '../assets/csharp.png';
+import sql from '../assets/sql.png';
 
 export default {
   email,
@@ -71,4 +74,7 @@ export default {
   nb,
   skype,
   spotify,
+  sql2,
+  csharp,
+  sql,
 };

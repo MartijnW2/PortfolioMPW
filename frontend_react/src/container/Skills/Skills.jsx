@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import './Skills.scss';
 import { AppWrap } from '../../wrapper';
-import { SiTypescript, SiJavascript, SiOracle } from 'react-icons/si';
-import { TbBrandCSharp } from "react-icons/tb";
-import { BsFiletypeScss } from "react-icons/bs";
 import { motion, useAnimationFrame } from 'framer-motion';
+import { images } from '../../constants';
 
 const icons = [
-  <BsFiletypeScss key="scss" />,
-  <SiTypescript key="ts" />,
-  <SiJavascript key="js" />,
-  <TbBrandCSharp key="csharp" />,
-  <SiOracle key="oracle" />
+   <img src={images.css} alt="CSS" />,
+   <img src = {images.typescript}></img>,
+   <img src = {images.javascript}></img>,
+   <img src={images.csharp} alt="C#" />,
+   <img src = {images.sql2}></img>,
 ];
 
 const Skills = () => {
@@ -21,11 +19,11 @@ const Skills = () => {
 
   useAnimationFrame((t) => {
     if (!isHovered) {
-      setRotation((t / 10000) * 360); // Only animate when not hovered
+      setRotation((t / 10000) * 360);
     }
   });
 
-  return (
+return (
     <motion.div
       className="circle-container"
       style={{ transform: `rotate(${rotation}deg)` }}
@@ -36,10 +34,11 @@ const Skills = () => {
           transform: `
             translate(-50%, -50%)
             rotate(${angle}deg)
-            translate(0, -240px)
+            translate(0, -280px)
             rotate(${-angle - rotation}deg)
           `
         };
+
         return (
           <div
             className={`circle-icon icon-${i}`}
