@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Skills.scss';
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { motion, useAnimationFrame } from 'framer-motion';
 import { images } from '../../constants';
 import { urlFor, client } from '../../client';
+import SkillRow from './SkillRow';
 
-// Use an array of objects to link icons to their alt text
 const iconData = [
   { icon: <img src={images.css} alt="css" />, alt: "css" },
   { icon: <img src={images.typescript} alt="typescript" />, alt: "typescript" },
@@ -15,25 +15,23 @@ const iconData = [
 ];
 
 const tools = [
-  { name: "Git", image: images.git, alt: "Git logo" },
-  { name: "Jira", image: images.jira, alt: "Jira logo" },
-  { name: "Confluence", image: images.confluence, alt: "Confluence logo" },
-  { name: "Figma", image: images.figma, alt: "Figma logo" },
-  { name: "Jenkins", image: images.jenkins, alt: "Jenkins logo" },
-  { name: "VS Code", image: images.vscode, alt: "Visual Studio Code logo" },
-  { name: "Unity", image: images.unity, alt: "Unity game engine logo" },
+  { name: "Git", image: images.git, alt: "Git" },
+  { name: "Jira", image: images.jira, alt: "Jira" },
+  { name: "Confluence", image: images.confluence, alt: "Confluence" },
+  { name: "Figma", image: images.figma, alt: "Figma" },
+  { name: "Jenkins", image: images.jenkins, alt: "Jenkins" },
+  { name: "VS Code", image: images.vscode, alt: "Visual Studio" },
+  { name: "Unity", image: images.unity, alt: "Unity" },
+  { name: "Oracle APEX", image: images.oracle, alt: "Oracle APEX" },
 ];
 
 const otherSkills = [
-  { name: "React", image: images.react, alt: "React logo" },
-  { name: "Redux", image: images.redux, alt: "Redux logo" },
-  { name: "Scrum", image: images.scrum, alt: "Scrum methodology icon" },
-  { name: "vitest", image: images.vitest, alt: "Unit testing icon" },
-  { name: "Functional Testing", image: images.functionalTesting, alt: "Functional testing icon" },
-  { name: "3D", image: images.threeD, alt: "3D modeling or development icon" },
-  { name: "2D", image: images.twoD, alt: "2D graphics icon" },
-  { name: "Sanity", image: images.sanity, alt: "Sanity CMS logo" },
-  { name: "Oracle APEX", image: images.oracleApex, alt: "Oracle APEX logo" },
+  { name: "React", image: images.react, alt: "React" },
+  { name: "Redux", image: images.redux, alt: "Redux" },
+  { name: "Scrum", image: images.scrum, alt: "Scrum" },
+  { name: "vitest", image: images.vitest, alt: "ViTest" },
+  { name: "jest", image: images.jest, alt: "Jest testing" },
+  { name: "Sanity", image: images.sanity, alt: "Sanity" },
 ];
 
 const Skills = () => {
@@ -57,19 +55,6 @@ const Skills = () => {
   }, [isHovered]);
 
  const selectedSkill = skills.find(skill => skill.alt === selectedIcon);
-
-const SkillRow = ({ title, items }) => (
-  <div className="mb-6">
-    <h2 className="text-lg font-semibold mb-2">{title}</h2>
-    <div className="flex flex-wrap gap-4">
-      {items.map(({ name, image, alt }) => (
-        <div key={name} className="flex items-center gap-2">
-          <img src={image} alt={alt || name} />
-        </div>
-      ))}
-    </div>
-  </div>
-);  
   
   return (
     <>
@@ -133,12 +118,12 @@ const SkillRow = ({ title, items }) => (
           );
         })}
       </motion.div>
-      <div style={{ marginTop: 200 }}>
-        <SkillRow title="Tools" items={tools} />
-        <SkillRow title="Skills" items={otherSkills} />
-      </div>
+        <div className="skills__rows-wrapper" style={{ marginTop: 300 }}>
+          <SkillRow title="Tools" items={tools} />
+          <SkillRow title="Skills" items={otherSkills} />
+        </div>
     </>
   );
 };
 
-export default AppWrap(Skills, 'skills');
+export default AppWrap(MotionWrap(Skills, 'app_skills'), 'skills', 'app__primarybg');

@@ -12,12 +12,14 @@ import confluence from '../assets/confluence.png';
 import cpp from '../assets/cpp.png';
 import csharp from '../assets/csharp.png';
 import css from '../assets/css.png';
+import email from '../assets/email.png';
 import figma from '../assets/figma.png';
 import flutter from '../assets/flutter.png';
 import git from '../assets/git.png';
 import graphql from '../assets/graphql.png';
 import html from '../assets/html.png';
 import jenkins from '../assets/jenkins.png';
+import jest from '../assets/jest.png';
 import jira from '../assets/jira.svg';
 import javascript from '../assets/javascript.png';
 import logo from '../assets/logo.png';
@@ -25,11 +27,13 @@ import mobile from '../assets/mobile.png';
 import mu5 from '../assets/mu5.png';
 import nb from '../assets/nb.png';
 import node from '../assets/node.png';
+import oracle from '../assets/oracle.png';
 import placeholder from '../assets/placeholder.png';
 import profile from '../assets/profile.png';
 import python from '../assets/python.png';
 import react from '../assets/react.png';
 import redux from '../assets/redux.png';
+import sanity from '../assets/sanity.png';
 import sass from '../assets/sass.png';
 import scrum from '../assets/scrum.png';
 import skype from '../assets/skype.png';
@@ -57,12 +61,14 @@ export default {
   cpp,
   csharp,
   css,
+  email,
   figma,
   flutter,
   git,
   graphql,
   html,
   jenkins,
+  jest,
   jira,
   javascript,
   logo,
@@ -70,11 +76,13 @@ export default {
   mu5,
   nb,
   node,
+  oracle,
   placeholder,
   profile,
   python,
   react,
   redux,
+  sanity,
   sass,
   scrum,
   skype,

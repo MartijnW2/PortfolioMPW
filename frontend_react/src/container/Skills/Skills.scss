@@ -2,7 +2,13 @@
   position: relative;
   width: 300px;
   height: 300px;
-  margin: 0 auto;
+  margin-top: 200px;
+  // margin: 0 auto;
+}
+
+.app__flex.app_skills {
+  display: flex;
+  flex-direction: column;
 }
 
 .circle-icon {
@@ -38,36 +44,38 @@
 }
 
 .skill__text-title {
-  margin: 1rem 1rem;
-  font-size: 1.5rem;
+  margin: 1rem 3rem;
+  font-size: 2rem;
   font-weight: 600;
-  color: var(--black-color);
+  color: var(--grey-color);
 }
 
 .skill__acquired-text {
   margin: 1rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
-  color: var(--grey-color);
+  color: rgb(150,150,150);
 }
 
 .skill__acquired-summary {
   margin: 1rem 1rem;
-  font-size: 1rem;
+  font-size: .8rem;
   font-weight: 400;
-  color: var(--grey-color);
+    color: rgb(0,0,0);
   text-align: justify;
   text-justify: inter-word;
 }
 
-.skills__rows-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem; // space between rows
-}
-
 .mb-6 {
   width: 100%;
+}
+
+.skills__row-title {
+  text-align: center;
+  color: rgb(180,180,180);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  
 }
 
 .flex.flex-wrap.gap-4 {
@@ -86,13 +94,21 @@
 .skills__row-singleline {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap; // Prevent wrapping
-  gap: 1rem;
-  overflow-x: auto; // Allows horizontal scroll if too many items
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 100; 
 
   img {
-    width: 5ren;
-    height: 5ren;
+    width: 100px;
+    height: 50px;
     object-fit: contain;
   }
+}
+
+.skills__rows-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
