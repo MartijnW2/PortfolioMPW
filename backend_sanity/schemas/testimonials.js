@@ -20,7 +20,7 @@ export default{
             title: 'ImgURL',
             type: 'image',
             options: {
-                hotspot: true // Enables the hotspot feature for better image cropping
+                hotspot: true
             }
         },
         {

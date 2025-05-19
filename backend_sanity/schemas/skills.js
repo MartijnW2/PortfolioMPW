@@ -1,6 +1,6 @@
 export default{
-    name: 'techStack',
-    title: 'Tech Stack',
+    name: 'skills',
+    title: 'Skills',
     type: 'document',
     fields: [
         {
@@ -10,10 +10,26 @@ export default{
             validation: Rule => Rule.required().min(1).max(50)
         },
         {
-            name: 'description',
-            title: 'Description',
+            name: 'acquiredAt',
+            title: 'AcquiredAt',
             type: 'string',
+            validation: Rule => Rule.required().min(1).max(50)
+        },
+        {
+            name: 'summary',
+            title: 'Summary',
+            type: 'text',
             validation: Rule => Rule.required().min(1).max(500)
+        },
+        {
+            name: 'alt',
+            title: 'Alt',
+            type: 'text',
+        },
+                {
+            name: 'tag',
+            title: 'Tag',
+            type: 'text',
         },
     ]
 };
