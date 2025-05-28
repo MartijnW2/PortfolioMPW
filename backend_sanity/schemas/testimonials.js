@@ -16,12 +16,10 @@ export default{
             validation: Rule => Rule.required().min(1).max(50)
         },
         {
-            name: 'image',
-            title: 'ImgURL',
-            type: 'image',
-            options: {
-                hotspot: true
-            }
+            name: 'contact',
+            title: 'Contact',
+            type: 'string',
+            validation: Rule => Rule.required().min(1).max(50)
         },
         {
             name: 'feedback',

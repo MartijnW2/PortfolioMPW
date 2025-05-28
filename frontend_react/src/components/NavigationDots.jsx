@@ -3,7 +3,7 @@ import React from 'react'
 export const NavigationDots = ({active}) => {
   return (
     <div className = "app__navigation">
-        {['home', 'about', 'skills', 'skillrow','testimonial', 'contact'].map((item, index) => (
+        {['home', 'about', 'skills', 'testimonial', 'contact'].map((item, index) => (
             <a
             href={`#${item}`}
             key={item + index}

@@ -41,6 +41,7 @@ import spotify from '../assets/spotify.png';
 import sql from '../assets/sql.png';
 import sql2 from '../assets/sql2.png';
 import typescript from '../assets/typescript.png';
+import underconstruction from '../assets/underconstruction.png';
 import unity from '../assets/unity.png';
 import vitest from '../assets/vitest.png';
 import vue from '../assets/vue.png';
@@ -90,6 +91,7 @@ export default {
   sql,
   sql2,
   typescript,
+  underconstruction,
   unity,
   vitest,
   vscode,

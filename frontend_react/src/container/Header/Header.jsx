@@ -34,6 +34,7 @@ const Header = () => {
             <div className='tag-cmp app__flex'>
               <p className = "p-text" style={{marginLeft: 20}}>Frontend Developer</p>
               <p className = "p-text" style={{marginLeft: 20}}>Unity Developer</p>
+              <p className = "p-text" style={{marginLeft: 20}}>Freelancer</p>
             </div>
           </div>
       </motion.div>
@@ -43,14 +44,20 @@ const Header = () => {
         transition={{ duration: 1, delayChildren: 0.5 }}
         className = "app__header-img"
       >
-        <img src={images.placeholder} alt="profile.bg"/>
         <motion.img
-        whileInView={{ scale: [0, 1] }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        className = "overlay_circle"
-        src={images.circle}
-        alt="profile_circle"
+          src={images.placeholder}
+          alt="profile.bg"
+          whileInView={{ scale: [0, 1.5] }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          className='profile-img'
         />
+        {/* <motion.img
+          whileInView={{ scale: [0, 1] }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          className="overlay_circle"
+          src={images.circle}
+          alt="profile_circle"
+        /> */}
       </motion.div>      
       
       <motion.div
@@ -58,7 +65,7 @@ const Header = () => {
         whileInView={scaleVarients.whileInView}
         className = "app__header-circles"
       >
-        {[images.flutter, images.redux, images.sass].map((circle, index) => (
+        {[images.unity, images.react, images.scrum].map((circle, index) => (
           <div className = "circle-cmp app__flex" key={`circle-${index}`}>
             <img src={circle} alt="circle"/>
           </div>
@@ -69,4 +76,9 @@ const Header = () => {
   );
 };
 
-export default AppWrap(Header, "home");
+export default AppWrap(
+  Header,
+  "home",
+  "",
+  "Did you know that this entire portfolio is created using React and JavaScript?"
+);

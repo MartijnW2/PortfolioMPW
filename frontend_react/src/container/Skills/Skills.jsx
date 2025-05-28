@@ -110,8 +110,21 @@ const Skills = () => {
                 opacity: isDimmed ? 0.2 : 1,
                 transition: 'opacity 0.3s'
               }}
-              onMouseEnter={() => { setIsHovered(true); setHoveredIndex(i); setSelectedIcon(item.alt); }}
-              onMouseLeave={() => { setIsHovered(false); setHoveredIndex(null); setSelectedIcon(""); }}
+                onMouseEnter={() => {
+                  setIsHovered(true);
+                  setHoveredIndex(i);
+                  setSelectedIcon(item.alt);
+                }}
+                onMouseLeave={() => {
+                  setIsHovered(false);
+                  setHoveredIndex(null);
+                  setSelectedIcon("");
+                }}
+                onTouchStart={() => {
+                  setIsHovered(true);
+                  setHoveredIndex(i);
+                  setSelectedIcon(item.alt);
+                }}
             >
               {item.icon}
             </div>
@@ -126,4 +139,4 @@ const Skills = () => {
   );
 };
 
-export default AppWrap(MotionWrap(Skills, 'app_skills'), 'skills', 'app__primarybg');
+export default AppWrap(MotionWrap(Skills, 'app_skills'), 'skills', 'app__primarybg', "My philosophy is that years of experience don't make good developers, rather the ability to quickly learn and get familiar with new technologies");

@@ -41,5 +41,5 @@ useEffect(() => {
   );
 };
 
-// export default AppWrap(About, 'about');
-export default AppWrap(MotionWrap(About, 'app_about'), 'about', 'app__whitebg');
+export default AppWrap(About, 'about', "", "I you want to check out the codebase, the link to my github is on the left of the every section.");
+// export default AppWrap(MotionWrap(About, 'app_about'), 'about', 'app__whitebg');

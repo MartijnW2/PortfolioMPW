@@ -18,14 +18,12 @@ const Footer = () => {
 
   const { name, email, message } = formData;
 
-  // Store interim transcript for live display
   const [interimTranscript, setInterimTranscript] = useState('');
 
-  // Initialize recognition only once
   useEffect(() => {
     if ('webkitSpeechRecognition' in window) {
       recognitionRef.current = new window.webkitSpeechRecognition();
-      recognitionRef.current.continuous = false;
+      recognitionRef.current.continuous = true;
       recognitionRef.current.interimResults = true;
       recognitionRef.current.lang = 'en-US';
     }
@@ -141,31 +139,30 @@ const Footer = () => {
               onChange={handleChangeInput}
             />
           </div>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginBottom: 8 }}>
+              <button
+                type="button"
+                onClick={handleMicClick}
+                className="p-text"
+                title={listening ? "Listening..." : "Speak"}
+                style={{
+                  background: listening ? '#e53935' : '',
+                  color: listening ? '#fff' : '',
+                  transition: 'background 0.2s, color 0.2s'
+                }}
+              >
+                {listening ? 'Stop speaking' : 'Start speaking'}
+              </button>
+            </div>
           <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
             <textarea
               className="p-text"
               value={message + (interimTranscript ? ' ' + interimTranscript : '')}
               name="message"
-              placeholder="Your Message"
+              placeholder="Type in your message or press the button above to start speaking"
               onChange={handleChangeInput}
               style={{ flex: 1 }}
             />
-            <button
-              type="button"
-              onClick={handleMicClick}
-              style={{
-                marginLeft: 8,
-                background: listening ? '#eee' : '#fff',
-                border: '1px solid #ccc',
-                borderRadius: '50%',
-                width: 40,
-                height: 40,
-                cursor: 'pointer'
-              }}
-              title={listening ? "Listening..." : "Speak"}
-            >
-              🎤
-            </button>
           </div>
           <button
             type="button"
@@ -188,5 +185,6 @@ export default AppWrap(
   MotionWrap(
     Footer, 'app__footer'),
   'contact',
-  'app__primarybg'
+  'app__primarybg',
+  'Great development is all about making life easier'
 );
