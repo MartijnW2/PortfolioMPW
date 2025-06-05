@@ -29,7 +29,6 @@ import nb from '../assets/nb.png';
 import node from '../assets/node.png';
 import oracle from '../assets/oracle.png';
 import placeholder from '../assets/placeholder.png';
-import profile from '../assets/profile.png';
 import python from '../assets/python.png';
 import react from '../assets/react.png';
 import redux from '../assets/redux.png';
@@ -46,6 +45,8 @@ import unity from '../assets/unity.png';
 import vitest from '../assets/vitest.png';
 import vue from '../assets/vue.png';
 import vscode from '../assets/vscode.png';
+import profilePicture from '../assets/profilePicture.png';
+import profilePicture2 from '../assets/profilePicture2.png';
 
 export default {
   about01,
@@ -79,7 +80,8 @@ export default {
   node,
   oracle,
   placeholder,
-  profile,
+  profilePicture,
+  profilePicture2,
   python,
   react,
   redux,

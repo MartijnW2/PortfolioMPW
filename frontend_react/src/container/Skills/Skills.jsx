@@ -14,6 +14,28 @@ const iconData = [
   { icon: <img src={images.sql2} alt="sql" />, alt: "sql" },
 ];
 
+
+const tools = [
+
+  { name: "Git", image: images.git, alt: "Git" },
+  { name: "Jira", image: images.jira, alt: "Jira" },
+  { name: "Confluence", image: images.confluence, alt: "Confluence" },
+  { name: "Figma", image: images.figma, alt: "Figma" },
+  { name: "Jenkins", image: images.jenkins, alt: "Jenkins" },
+  { name: "VS Code", image: images.vscode, alt: "Visual Studio" },
+  { name: "Unity", image: images.unity, alt: "Unity" },
+  { name: "Oracle APEX", image: images.oracle, alt: "Oracle APEX" },
+];
+
+const otherSkills = [
+  { name: "React", image: images.react, alt: "React" },
+  { name: "Redux", image: images.redux, alt: "Redux" },
+  { name: "Scrum", image: images.scrum, alt: "Scrum" },
+  { name: "vitest", image: images.vitest, alt: "ViTest" },
+  { name: "jest", image: images.jest, alt: "Jest testing" },
+  { name: "Sanity", image: images.sanity, alt: "Sanity" },
+];
+
 const Skills = () => {
   const iconCount = iconData.length;
   const [rotation, setRotation] = useState(0);
@@ -21,8 +43,7 @@ const Skills = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [skills, setSkills] = useState([]); 
   const [selectedIcon, setSelectedIcon] = useState("");
-  const [tools, setTools] = useState([]);
-  const [otherSkills, setOtherSkills] = useState([]);
+  
 
   useAnimationFrame((t) => {
     if (!isHovered) {
@@ -30,27 +51,25 @@ const Skills = () => {
     }
   });
 
-  useEffect(() => {
-    const query = '*[_type == "otherSkills"]';
+//  useEffect(() => {
+//     const query = '*[_type == "otherSkills"]';
+//     client.fetch(query).then((data) => {
+//     console.log(data);
 
-    client.fetch(query).then((data) => {
-    console.log(data);
+//       const toolsArray = [];
+//       const skillsArray = [];
 
-      const toolsArray = [];
-      const skillsArray = [];
-
-      data.forEach((item) => {
-        if (item.skillType === "tool") {
-          toolsArray.push(item);
-        } else {
-          skillsArray.push(item);
-        }
-      });
-
-      setTools(toolsArray);
-      setOtherSkills(skillsArray);
-    });
-  }, []);
+//       data.forEach((item) => {
+//         if (item.skillType === "tool") {
+//           toolsArray.push(item);
+//         } else {
+//           skillsArray.push(item);
+//         }
+//       });
+//       setTools(toolsArray);
+//       setOtherSkills(skillsArray);
+//     });
+//   }, []);
 
   useEffect(() => {
     const query = '*[_type == "skills"]';

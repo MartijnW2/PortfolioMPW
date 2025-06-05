@@ -45,7 +45,7 @@ const Header = () => {
         className = "app__header-img"
       >
         <motion.img
-          src={images.placeholder}
+          src={ images.profilePicture2}
           alt="profile.bg"
           whileInView={{ scale: [0, 1.5] }}
           transition={{ duration: 1, ease: 'easeInOut' }}
