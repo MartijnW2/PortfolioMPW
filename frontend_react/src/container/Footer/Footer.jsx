@@ -159,7 +159,7 @@ const Footer = () => {
               className="p-text"
               value={message + (interimTranscript ? ' ' + interimTranscript : '')}
               name="message"
-              placeholder="Type in your message or press the button above to start speaking"
+              placeholder="Type in your message or, in case you are not on Firefox, press the button above to start speaking"
               onChange={handleChangeInput}
               style={{ flex: 1 }}
             />
